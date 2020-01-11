@@ -61,3 +61,21 @@ git push heroku master
 heroku open - to open browser
 heroku logs - to open logs
 ~~~
+
+## Passport JS
+- partialy automate google authentication flow
+- need to add two libs 
+  1. passport - general helper for handling auth in express apps
+  2. passport stratergy - helper for authenticating with specific method (email, fb, google,...) 
+~~~
+npm install passport passport-google-oauth20
+~~~
+
+## Google account configure with OAuth
+- navigate to https://console.developers.google.com/
+- create new project and enable oAuth there
+- need to add webclient there. then we can get client and secret
+- need to add correct Redirect URL there while creating consent  other wise not work
+- way to store client secreat in project
+  - create config/ keys.js and add all keys there
+  - add that file to gitignore
