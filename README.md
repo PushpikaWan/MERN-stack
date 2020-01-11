@@ -9,4 +9,5 @@ N - node
 - Heroku deployment
 - Google AUth
 - Passport JS
+- nodemon
 
