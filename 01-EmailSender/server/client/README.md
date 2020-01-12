@@ -4,6 +4,13 @@
 - There are many FAQs, Updates, components, user guides
 - install create-react-app as a global node modules, then we can create app using that
 
+## concurrently 
+- package that help to run server and client server both concurrently
+~~~
+	"server": "nodemon index.js",
+	"client": "npm run start --prefix client",
+	"dev": "concurrently \"npm run server\" \"npm run client\""
+~~~
 
 
 # Default react-app read me 
