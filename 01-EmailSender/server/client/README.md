@@ -12,6 +12,21 @@
 	"dev": "concurrently \"npm run server\" \"npm run client\""
 ~~~
 
+## proxy - only for dev
+- there are issues in client when it use realtive link like '/auth/google'. It tries to load this url with front end react server but it needs to resolve with backend server
+- we can put proxy in client package.json to use that relative link
+- need to install ```npm install http-proxy-middleware ``` for proxy object
+~~~
+  "proxy":{
+    "/auth/google":{
+      "target":"http://localhost:5000"
+    }
+  },
+~~~
+- we can remove this from package.json and put it insetUpProxy.js
+- ``` important``` there are no issues in production env, there are no two servers, only one backend server is there.
+
+
 
 # Default react-app read me 
 
