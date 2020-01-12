@@ -84,6 +84,24 @@ npm install passport passport-google-oauth20
 - http is stateless therfore server cannot contains any state of clients
 - therefore we can use cookie with server requests to inform the client data like tokens
 - cookies are automatically manage by browser
+- can use cookie-session library
+- use passport to serialize and deserialize user object to work with cookie
+- need to set below properites to configure cookie
+~~~
+app.use(
+  cookieSession({
+    maxAge: 30*24*60*60*1000, //in milliseconds
+    keys: ['afsafaefaeaefafaefaefae'] //any random string
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+~~~
+
+### notes
+- all of these passport, cookie-session can be identified as middlewares
+- can see with app.use (....)
 
 ## Mongo db - use Mongoose
 - collection of collections

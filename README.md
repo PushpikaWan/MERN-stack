@@ -12,4 +12,7 @@ N - node
 - nodemon
 - mongoose 
 - mlab.com - host mongo db
+- cookie-session - this limit cookie size(ex: 4kb). containst whole data in cookie
+- express-session - conatins only reference to server side object. therfore no limit of data
+
 
