@@ -14,5 +14,7 @@ N - node
 - mlab.com - host mongo db
 - cookie-session - this limit cookie size(ex: 4kb). containst whole data in cookie
 - express-session - conatins only reference to server side object. therfore no limit of data
+- concurrently - to run backend server and client server both concurrently
+ 
 
 
