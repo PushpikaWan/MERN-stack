@@ -119,3 +119,7 @@ app.use(passport.session());
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
 ~~~
+
+## Dev vs Prod
+- It's good to create separate google-apis, cookie keys like keys what we set on keys file for dev and production environments
+- 
