@@ -10,4 +10,6 @@ N - node
 - Google AUth
 - Passport JS
 - nodemon
+- mongoose 
+- mlab.com - host mongo db
 

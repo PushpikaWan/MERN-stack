@@ -79,3 +79,25 @@ npm install passport passport-google-oauth20
 - way to store client secreat in project
   - create config/ keys.js and add all keys there
   - add that file to gitignore
+
+## cookie
+- http is stateless therfore server cannot contains any state of clients
+- therefore we can use cookie with server requests to inform the client data like tokens
+- cookies are automatically manage by browser
+
+## Mongo db - use Mongoose
+- collection of collections
+- schema less can have any structure
+- mongose use model class to refer collections
+- mongose use model instance to refer records in collections
+- there are two ways to use mongo db
+  - install in machine
+  - use external app hosted in web
+- never use require with mongoose module. It needs single instance
+  - require mongoose lib with files
+  - then get models using that
+
+~~~
+const mongoose = require('mongoose');
+const User = mongoose.model('User');
+~~~
