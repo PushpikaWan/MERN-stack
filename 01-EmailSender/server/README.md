@@ -20,6 +20,7 @@ app.get('/home', (req, res) => {
 * req - request object
 * res - response object
 * res.send(...) - send json response immediatley by closing request
+* this app.post, put, delete...... can have any number of arguments (functions). when it hits all the functions are call accroding to the sequence. we can put require middlewares there.
 
 ~~~
 app.listen(5000);
