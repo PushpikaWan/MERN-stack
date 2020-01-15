@@ -16,6 +16,7 @@ N - node
 - express-session - conatins only reference to server side object. therfore no limit of data
 - concurrently - to run backend server and client server both concurrently
 - redux
- 
+- react-redux
+- react-router-dom
 
 

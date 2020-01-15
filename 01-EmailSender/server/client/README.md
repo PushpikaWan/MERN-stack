@@ -29,6 +29,9 @@
 ## Redux
 - use to control data in client app (index.js)
 - react use to conroll rendering in client app (App.js)
+- provider comes from react-redux lib and it help to glue both
+- provider tag make other to communicate with root and store
+- can see comments on code
 
 
 ## naming
