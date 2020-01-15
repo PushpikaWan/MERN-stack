@@ -10,12 +10,18 @@ module.exports = (app) => {
 	);
 
 	//authenticate
-	app.get('/auth/google/callback', passport.authenticate('google'));
+	app.get(
+		'/auth/google/callback', 
+		passport.authenticate('google'),
+		(req, res) =>{
+			res.redirect('/surveys');
+		}
+	);
 
 	//passport attach prpoerties to req object it contatins req.user, req.logout() as well
 	app.get('/api/logout', (req, res) =>{
 		req.logout(); //take and kill cookie
-		res.send(req.user);
+		res.redirect('/');
 	});
 
 	app.get('/api/current_user', (req, res) => {

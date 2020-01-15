@@ -38,6 +38,27 @@
 - if given class exporting class, component then name it starting Capital letter
 - if given class exporting functions then name it starting lowercase letter
 
+## webpack 
+- create single js file by combining all in project
+- webpack identify import 'materialize-css/dist/css/materialize.min.css'; as a not a js file and treat different
+
+## redux-thunk middleware
+- give access to dispatch actions directly without returning actions by access creator
+- need to return function from action and thunk will call that function
+- react-redux connect function will provide ability to call action creators
+
+~~~
+export default connect(null, actions)(App);
+~~~
+
+## react-router-dom
+- Link in this module can use to nevigate in side react component. 
+- if we use <a> it will fully load page.
+
+
+### JS
+- '' empty string consider as false
+
 
 # Default react-app read me 
 

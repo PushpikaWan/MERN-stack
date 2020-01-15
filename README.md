@@ -18,5 +18,7 @@ N - node
 - redux
 - react-redux
 - react-router-dom
-
+- materialize-
+- axios
+- redux-thunk
 
