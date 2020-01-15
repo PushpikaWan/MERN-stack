@@ -26,6 +26,14 @@
 - we can remove this from package.json and put it insetUpProxy.js
 - ``` important``` there are no issues in production env, there are no two servers, only one backend server is there.
 
+## Redux
+- use to control data in client app (index.js)
+- react use to conroll rendering in client app (App.js)
+
+
+## naming
+- if given class exporting class, component then name it starting Capital letter
+- if given class exporting functions then name it starting lowercase letter
 
 
 # Default react-app read me 
