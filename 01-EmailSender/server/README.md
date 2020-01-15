@@ -123,3 +123,25 @@ const User = mongoose.model('User');
 ## Dev vs Prod
 - It's good to create separate google-apis, cookie keys like keys what we set on keys file for dev and production environments
 - 
+
+## Promise
+- use fetch (). then to call
+- can replace by async awit
+
+~~~
+//promise
+function fetchData(){
+  fetch('https:/.......')                 //promise 1
+    .then(res => res.json())             // promise 2
+    .then(json => console.log(json)); 
+}
+
+// async awiat
+
+async function fetchData(){
+  const res = await fetch('https:/.......');
+  const json = await res.json();          
+  console.log(json);   
+}
+
+~~~
