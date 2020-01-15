@@ -146,3 +146,31 @@ async function fetchData(){
 }
 
 ~~~
+
+## production and deployment of client and server
+- first check routes are available in express, if not it check the matching client routes
+- need to add below code segment
+
+~~~
+
+if (process.env.NODE_ENV === 'production') {
+	//express we serve up production assets
+	//like our main.js and main.css files
+	app.use(express.static('client/build'));
+
+	// express will serve up the index.html file
+	//if id doesn't recognize the route
+	const path = require('path');
+	app.get('*', (req, res) => {
+		res.sendFile(path.resolve(_dirname, 'client', 'build', 'index.html'));
+	});
+}
+~~~
+- need to build client side in heroku otherwise we need to add build directory to heroku. But it is not a good option 
+-another option (use largely) - pusht to CI -> run tests and stuffs -> CI builds and commits client -> CI pushes build to Heroku
+- we use this optio  - pust to heroku -> tell heroku to install all dependencies for client -> Heroku build client project (can use post build)
+- use below commands https://devcenter.heroku.com/articles/nodejs-support#customizing-the-build-process
+~~~
+in package.json
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+~~~
