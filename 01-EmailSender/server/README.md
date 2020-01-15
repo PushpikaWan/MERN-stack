@@ -119,6 +119,10 @@ app.use(passport.session());
 ~~~
 const mongoose = require('mongoose');
 const User = mongoose.model('User');
+
+
+//relation ship of survey and user
+_user: { type: Schema.Types.ObjectId, ref:'User'}
 ~~~
 
 ## Dev vs Prod

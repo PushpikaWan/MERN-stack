@@ -21,4 +21,5 @@ N - node
 - materialize-
 - axios
 - redux-thunk
+- sendgrid - as a email sender
 
