@@ -6,8 +6,9 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
+import Dashboard from './Dashboard';
+import SurveyNew from "./surveys/SurveyNew";
 
-const Dashboard = () => <h2> Dashboard </h2>;
 const Surveys = () => <h2> Surveys </h2>;
 
 export class App extends Component{
@@ -20,11 +21,11 @@ export class App extends Component{
     return(
       <div className="container">
        <BrowserRouter>
-        <div>
+        <div className="container">
           <Header />
           <Route path="/" component={Landing} exact></Route>
-          <Route path="/surveys" component={Dashboard}></Route>
-          <Route path="/surveys/new" component={Surveys}></Route>
+          <Route path="/surveys" component={Dashboard} exact></Route>
+          <Route path="/surveys/new" component={SurveyNew}></Route>
         </div>
        </BrowserRouter>
       </div>

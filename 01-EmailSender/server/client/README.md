@@ -59,6 +59,15 @@ export default connect(null, actions)(App);
 ### JS
 - '' empty string consider as false
 
+### lodash
+-  we can use loadsh to map array of element and do the things we want
+
+~~~
+_.map(FIELDS, ({ label, name }) => {
+			return <Field key={name} component={SurevyTextField} type="text" label={label} name={name} />;
+		});
+~~~
+
 
 # Default react-app read me 
 

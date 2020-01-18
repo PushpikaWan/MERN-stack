@@ -22,4 +22,5 @@ N - node
 - axios
 - redux-thunk
 - sendgrid - as a email sender
+- redux-form
 
