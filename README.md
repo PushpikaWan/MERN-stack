@@ -1,3 +1,6 @@
+This is a kind of RSVP application that send emails to groups and show feedback of recivers in a simple dashboard. This project was created to practice full stack development with react and express.
+can see live example here - https://glacial-island-34401.herokuapp.com/
+
 # MERN-stack
 
 M - Mongo
@@ -27,3 +30,4 @@ N - node
 - https://ngrok.com/ - can be use as an alternative for local tunnel
 - lodash - there are really good fucntionality to map and do other operations have a look and use it while refactoring
 - path-parser
+

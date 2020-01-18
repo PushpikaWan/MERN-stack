@@ -11,6 +11,14 @@ const Survey = mongoose.model('surveys');
 const Recipient = mongoose.model('recipients');
 
 module.exports = (app) => {
+	app.get('/api/surveys/', requireLogin, async (req, res) => {
+		const surveys = await Survey.find({ _user: req.user.id }).select({
+			recipients: false
+    });
+    console.log('surveys: ',surveys);
+		res.send(surveys);
+	});
+
 	app.get('/api/surveys/:surveyId/:choice', (req, res) => {
 		res.send('Thanks for voting!');
 	});
@@ -24,8 +32,8 @@ module.exports = (app) => {
 			body,
 			recipients: recipients.split(',').map((email) => new Recipient({ email })),
 			_user: req.user.id,
-      dateSent: Date.now(),
-      lastRespondedDate: ''
+			dateSent: Date.now(),
+			lastRespondedDate: ''
 		});
 
 		//send mail by Mailer
@@ -52,23 +60,25 @@ module.exports = (app) => {
 				}
 			})
 			.compact()
-      .uniqBy('email', 'surveyId')
-      .tap(ev => console.log(ev))
-			.each(({surveyId, email, choice}) => {
+			.uniqBy('email', 'surveyId')
+			.tap((ev) => console.log(ev))
+			.each(({ surveyId, email, choice }) => {
 				Survey.updateOne(
 					{
 						_id: surveyId,
 						recipients: {
 							$elemMatch: { email: email, responded: false }
 						}
-          },{
-            $inc: { [choice]: 1},
-            $set: { 'recipients.$.responded': true},
-            lastRespondedDate: new Date()
-          }).exec();
+					},
+					{
+						$inc: { [choice]: 1 },
+						$set: { 'recipients.$.responded': true },
+						lastRespondedDate: new Date()
+					}
+				).exec();
 			})
-      .value();
-      console.log('full ev:',ev);
+			.value();
+		console.log('full ev:', ev);
 
 		res.send({});
 	});
