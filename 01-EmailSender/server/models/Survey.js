@@ -13,7 +13,7 @@ const surveySchema = new Schema({
 	//relation ship of survey and user
 	_user: { type: Schema.Types.ObjectId, ref:'User'},
 	dateSent: Date,
-	lastResponded: Date
+	lastRespondedDate: Date
 });
 
 //create model

@@ -178,3 +178,19 @@ if (process.env.NODE_ENV === 'production') {
 in package.json
 		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
 ~~~
+
+## Web hooks - local tunnel
+- use local  tunnel
+- It allows to share a web service on local development machine without messing with DNS and firewall settings
+- we need to add below code to pacakge.json to run local tunnle.
+- be careful to provide very unique subdomin name otherwise u will receive any other person's callbacks as well with same name (use random word like - df23erd4w3rfd3wefdsx)
+~~~
+		"webhook":"lt -p 5000 -s <unique subdomain>"
+~~~
+- append this call to dev script as well to start concurrently
+~~~
+	"dev": "concurrently \"npm run server\" \"npm run client\" \"npm run webhook\"",
+~~~
+
+## ngrok is alternative for local tunnel https://ngrok.com/
+

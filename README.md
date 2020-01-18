@@ -23,4 +23,7 @@ N - node
 - redux-thunk
 - sendgrid - as a email sender
 - redux-form
-
+- local tunnel - allows to share a web service on local development machine without messing with DNS and firewall settings
+- https://ngrok.com/ - can be use as an alternative for local tunnel
+- lodash - there are really good fucntionality to map and do other operations have a look and use it while refactoring
+- path-parser
