@@ -31,6 +31,8 @@ N - node
 - lodash - there are really good fucntionality to map and do other operations have a look and use it while refactoring
 - path-parser
 
-// useful node modules (not used)
+# useful node modules (not used)
 - morgan - for logs
 - dotenv - to provide env file support
+- express validator, joi - to api validation
+- https://styled-components.com/ - to add styles
